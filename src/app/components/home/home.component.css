@@ -1,0 +1,10 @@
+img{
+  display: flex;
+  margin: 0px auto;
+  border-radius: 3%;
+  width: 50%;
+}
+
+#card{
+  margin:auto
+}

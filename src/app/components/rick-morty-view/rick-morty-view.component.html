@@ -1,0 +1,24 @@
+<div class="d-flex p-3">
+  <p-panelMenu [model]="items" [style]="{ width: '300px' }"></p-panelMenu>
+
+  <div class="container-fluid">
+    <button pButton icon="pi pi-angle-left" type="button" label="Anterior" (click)="anterior()" *ngIf="paginaAnterior!=''"></button>
+    <button pButton icon="pi pi-angle-right" type="button" label="Siguiente" (click)="siguiente()" *ngIf="siguientePagina!=''"  iconPos="right"></button>
+    <div class="row p-4">
+      <div *ngFor="let personaje of characters" class="col-md-3">
+        <div class="col card" id="card">
+          <img
+            [src]="personaje.image"
+            [alt]="personaje.species"
+            class="card-img-top"
+          />
+          <div class="card-body">
+            <p class="card-text">
+              {{ personaje.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

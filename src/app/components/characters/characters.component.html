@@ -1,0 +1,40 @@
+<br/>
+<div class=" d-flex">
+  <div class="col-md-2">
+    <p-card class="card" header="Personajes guardados">
+      <p
+      class="list-group-item list-group-item-action"
+      *ngFor="let personaje of listapersonajes">{{personaje.name}}</p>
+    </p-card>
+  </div>
+
+  <div class="container-fluid ">
+        <input size="60" type="text"
+        placeholder="Agregar personaje"
+        name="termino"
+        [(ngModel)]="termino"
+        (keyup.enter)="buscar(termino)"
+        pInputText />
+        <span *ngIf="hayError" class="alert alert-danger">
+          No se encontró nada con el nombre ingresado
+        </span>
+
+        <div class="row p-4">
+          <div *ngFor="let personaje of listapersonajes"
+          class="col-md-3">
+            <div class=" col card" id="card">
+              <img [src]="personaje.image" [alt]="personaje.species" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">
+                      {{personaje.name}}
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+  </div>
+</div>
+
+
+
